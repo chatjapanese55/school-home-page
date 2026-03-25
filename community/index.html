@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatCommunity | Bridging Global Travelers and Local Hearts</title>
+  <meta name="description" content="ChatCommunity connects language learners across borders. Learn in Japan, Korea, Thailand, China and more — one community, many destinations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdf6ee;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @media (max-width: 640px) {
+      .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #f0ece6;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .site-header .container {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .site-header img {
+      height: 2.5rem;
+      width: auto;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/hero-bg_14834c33.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 56rem;
+      padding: 4rem 2rem;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .accent-orange { color: #fb923c; }
+    .hero h1 .accent-blue { color: #38bdf8; }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.85);
+      max-width: 38rem;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== COMMUNITY ===== */
+    .community {
+      background-color: #fdf6ee;
+      padding: 7rem 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .section-header h2 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: #1a1a1a;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .section-header h2 em {
+      font-style: normal;
+      color: #fb923c;
+    }
+    .section-header p {
+      color: #6b7280;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 38rem;
+      margin: 0 auto;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background-color: #ffffff;
+      border-radius: 1.25rem;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    .feature-icon svg { width: 2rem; height: 2rem; }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+    .feature-card p {
+      color: #6b7280;
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    /* ===== BRANCHES ===== */
+    .branches-japan {
+      background-color: #ffffff;
+      padding: 7rem 0;
+    }
+    .branches-global {
+      background-color: #fdf6ee;
+      padding: 7rem 0;
+    }
+    .branch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .branch-card {
+      background-color: #ffffff;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .branch-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      transform: translateY(-4px);
+    }
+    .branch-img-wrap {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+    .branch-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s;
+    }
+    .branch-card:hover .branch-img-wrap img { transform: scale(1.06); }
+    .coming-soon-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.52);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .coming-soon-overlay span {
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .branch-body {
+      padding: 1.75rem 1.75rem 2rem;
+      text-align: center;
+    }
+    .branch-body h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 0.6rem;
+    }
+    .branch-body p {
+      color: #6b7280;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .btn-visit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #0ea5e9;
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 0.6rem 1.5rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .btn-visit:hover {
+      background-color: #0284c7;
+      transform: translateX(2px);
+    }
+    .btn-visit svg { width: 1rem; height: 1rem; }
+
+    /* ===== CAMPAIGN ===== */
+    .campaign {
+      background-color: #ffffff;
+      padding: 7rem 0;
+    }
+    .campaign-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .campaign-card {
+      border-radius: 1.5rem;
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+    .required-badge {
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      width: 100%;
+    }
+    .required-badge .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+    .required-badge .course-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+    .arrow-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .arrow-line {
+      width: 2px;
+      height: 2rem;
+      border-radius: 9999px;
+      opacity: 0.35;
+    }
+    .arrow-icon { font-size: 1.5rem; font-weight: 700; }
+    .reward-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .reward-section .next-label {
+      font-size: 0.875rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .reward-section .reward-course {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+    .discount-badge {
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 1.25rem;
+      padding: 0.5rem 2.5rem;
+      border-radius: 9999px;
+      margin-top: 0.25rem;
+    }
+    .campaign-card .desc {
+      color: #9ca3af;
+      font-size: 0.8rem;
+      line-height: 1.75;
+      max-width: 22rem;
+    }
+    .community-note {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 1.25rem;
+      padding: 3rem 3.5rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .community-note-icon {
+      flex-shrink: 0;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f97316, #0ea5e9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .community-note-icon svg { width: 2.5rem; height: 2.5rem; color: #ffffff; }
+    .community-note-body { flex: 1; min-width: 200px; }
+    .community-note-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .community-note-title svg { width: 1.25rem; height: 1.25rem; color: #22c55e; flex-shrink: 0; }
+    .community-note-title h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+    .community-note-body p {
+      color: #6b7280;
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background-color: #1a1a1a;
+      padding: 3rem 0;
+    }
+    .site-footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .site-footer img {
+      height: 2.25rem;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+    .site-footer p {
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .community, .branches-japan, .branches-global, .campaign { padding: 4rem 0; }
+      .community-note { flex-direction: column; text-align: center; padding: 2rem; }
+      .community-note-title { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/logo_e5ce79c4.png" alt="ChatCommunity" />
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>
+        Bridging the Gap Between<br />
+        <span class="accent-orange">Global Travelers</span> and <span class="accent-blue">Local Hearts</span>
+      </h1>
+      <p>Connect with communities around the world through language and culture.</p>
+    </div>
+  </section>
+
+  <!-- ===== COMMUNITY ===== -->
+  <section class="community">
+    <div class="container">
+      <div class="section-header">
+        <h2>Language Learning <em>Without Borders</em></h2>
+        <p>We believe language is the bridge between people. Our community connects learners and locals across the globe — one conversation at a time.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Learn Across Borders</h3>
+          <p>Instead of studying a single language in one country, our community empowers you to develop the communication skills you need to travel and connect in multiple countries — each with its own culture, rhythm, and way of life.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Explore Local Cultures</h3>
+          <p>Whether you start in Japan or anywhere else, continuing your studies across different regions within the same country lets you experience diverse local cultures, hidden gems, and unique tourist destinations you'd never find in a textbook.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>One Community, Many Destinations</h3>
+          <p>Our global network means your learning never stops. Move between cities, countries, or continents — and your community moves with you. Every new location is a new chapter in your language journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JAPAN BRANCHES ===== -->
+  <section class="branches-japan">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our <em>Japan</em> Locations</h2>
+        <p>Start your journey in Japan — from the neon streets of Tokyo to the snowy landscapes of Hokkaido.</p>
+      </div>
+      <div class="branch-grid">
+
+        <!-- Tokyo -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/tokyo_dcd4ce3d.jpg" alt="Tokyo" loading="lazy" />
+          </div>
+          <div class="branch-body">
+            <h3>Tokyo</h3>
+            <p>Japan's vibrant capital — where tradition meets innovation. Explore world-class cuisine, culture, and endless neighborhoods to discover.</p>
+            <a href="https://www.chat-japanese.com" class="btn-visit" target="_blank">
+              Visit Site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Osaka -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/osaka_e29a64be.jpg" alt="Osaka" loading="lazy" />
+            <div class="coming-soon-overlay"><span>Coming Soon</span></div>
+          </div>
+          <div class="branch-body">
+            <h3>Osaka</h3>
+            <p>The kitchen of Japan, famous for its bold flavors, lively streets, and warm-hearted locals. A city that never stops surprising you.</p>
+          </div>
+        </div>
+
+        <!-- Kyoto -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/kyoto_409564e3.jpg" alt="Kyoto" loading="lazy" />
+            <div class="coming-soon-overlay"><span>Coming Soon</span></div>
+          </div>
+          <div class="branch-body">
+            <h3>Kyoto</h3>
+            <p>Japan's ancient capital, home to thousands of temples, shrines, and traditional machiya townhouses. A journey through living history.</p>
+          </div>
+        </div>
+
+        <!-- Fukuoka -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/fukuoka_edcff02b.jpg" alt="Fukuoka" loading="lazy" />
+            <div class="coming-soon-overlay"><span>Coming Soon</span></div>
+          </div>
+          <div class="branch-body">
+            <h3>Fukuoka</h3>
+            <p>A gateway to Asia with a relaxed coastal vibe, renowned for its ramen, yatai food stalls, and friendly atmosphere.</p>
+          </div>
+        </div>
+
+        <!-- Sapporo -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/sapporo_d4b2ec0a.jpg" alt="Sapporo" loading="lazy" />
+            <div class="coming-soon-overlay"><span>Coming Soon</span></div>
+          </div>
+          <div class="branch-body">
+            <h3>Sapporo</h3>
+            <p>Hokkaido's capital city, celebrated for its famous snow festival, fresh seafood, and breathtaking natural landscapes.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GLOBAL BRANCHES ===== -->
+  <section class="branches-global">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our <em>Global</em> Community</h2>
+        <p>The ChatCommunity is expanding worldwide. Join us as we grow across Asia and beyond.</p>
+      </div>
+      <div class="branch-grid">
+
+        <!-- Chat Japanese -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/chat-japanese_8836f977.jpg" alt="Chat Japanese" loading="lazy" />
+          </div>
+          <div class="branch-body">
+            <h3>Chat Japanese</h3>
+            <p>Our flagship community in Japan. Learn Japanese while exploring the country's rich culture, from Tokyo's neon lights to Kyoto's ancient temples.</p>
+            <a href="https://www.chat-japanese.com" class="btn-visit" target="_blank">
+              Visit Site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Chat Korean -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/korea_2cbe5fc5.jpg" alt="Chat Korean" loading="lazy" />
+            <div class="coming-soon-overlay"><span>Coming Soon</span></div>
+          </div>
+          <div class="branch-body">
+            <h3>Chat Korean</h3>
+            <p>Immerse yourself in Korean language and culture — from Seoul's dynamic streets to the serene countryside of Jeju Island.</p>
+          </div>
+        </div>
+
+        <!-- Chat Thai -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/thailand_f2e6c1c5.jpg" alt="Chat Thai" loading="lazy" />
+            <div class="coming-soon-overlay"><span>Coming Soon</span></div>
+          </div>
+          <div class="branch-body">
+            <h3>Chat Thai</h3>
+            <p>Discover the warmth of Thai culture while learning the language in Bangkok's bustling markets and Chiang Mai's tranquil temples.</p>
+          </div>
+        </div>
+
+        <!-- Chat Chinese -->
+        <div class="branch-card">
+          <div class="branch-img-wrap">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/china_3f2a8b4e.jpg" alt="Chat Chinese" loading="lazy" />
+            <div class="coming-soon-overlay"><span>Coming Soon</span></div>
+          </div>
+          <div class="branch-body">
+            <h3>Chat Chinese</h3>
+            <p>Explore the depth of Chinese language and civilization — from the ancient wonders of Beijing to the modern skyline of Shanghai.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAMPAIGN ===== -->
+  <section class="campaign">
+    <div class="container">
+      <div class="section-header">
+        <h2>Discount <em>Campaign</em></h2>
+        <p>Complete 2 consecutive weeks to unlock exclusive discounts on your next course — valid across all ChatCommunity locations worldwide.</p>
+      </div>
+      <div class="campaign-grid">
+
+        <!-- Card 1: Intensive → 1 Week -->
+        <div class="campaign-card" style="background-color: #fff7ed;">
+          <div class="required-badge" style="background-color: #ffedd5; border: 1px solid #fed7aa;">
+            <div class="label">Required — 2 Weeks</div>
+            <div class="course-name" style="color: #ea580c;">Intensive Course</div>
+          </div>
+          <div class="arrow-divider">
+            <div class="arrow-line" style="background-color: #f97316;"></div>
+            <span class="arrow-icon" style="color: #f97316;">↓</span>
+          </div>
+          <div class="reward-section">
+            <span class="next-label">Your next</span>
+            <span class="reward-course">1 Week Course</span>
+            <div class="discount-badge" style="background-color: #f97316;">50% OFF</div>
+          </div>
+          <p class="desc">Complete 2 consecutive weeks of the Intensive Course to unlock this discount. Valid across all ChatCommunity locations.</p>
+        </div>
+
+        <!-- Card 2: 1 Week → Weekend -->
+        <div class="campaign-card" style="background-color: #f0f9ff;">
+          <div class="required-badge" style="background-color: #e0f2fe; border: 1px solid #bae6fd;">
+            <div class="label">Required — 2 Weeks</div>
+            <div class="course-name" style="color: #0284c7;">1 Week Course</div>
+          </div>
+          <div class="arrow-divider">
+            <div class="arrow-line" style="background-color: #0ea5e9;"></div>
+            <span class="arrow-icon" style="color: #0ea5e9;">↓</span>
+          </div>
+          <div class="reward-section">
+            <span class="next-label">Your next</span>
+            <span class="reward-course">Weekend Course</span>
+            <div class="discount-badge" style="background-color: #0ea5e9;">50% OFF</div>
+          </div>
+          <p class="desc">Complete 2 consecutive weeks of the 1 Week Course to unlock this discount. Valid across all ChatCommunity locations.</p>
+        </div>
+
+      </div>
+
+      <!-- Community note -->
+      <div class="community-note">
+        <div class="community-note-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="community-note-body">
+          <div class="community-note-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3>Discounts Apply Across the Entire Community</h3>
+          </div>
+          <p>These discounts are valid even when you move to a different country or region within our network. As long as you continue learning within the ChatCommunity, your discount travels with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663470492773/YNpCpVMGr64VaJNkX2FnCT/logo_e5ce79c4.png" alt="ChatCommunity" />
+      <p>© 2025 ChatCommunity. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
