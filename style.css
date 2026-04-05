@@ -730,7 +730,161 @@ ul { list-style: none; }
   font-weight: 800;
   color: var(--color-secondary);
 }
-
+/* ===== A WEEK IN CHAT JAPANESE TOKYO ===== */
+.week-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #fff 0%, #f0f4ff 50%, #fff 100%);
+}
+.week-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 56px;
+}
+.week-col {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+  display: flex;
+  flex-direction: column;
+}
+.week-col-header {
+  padding: 32px 32px 24px;
+}
+.week-col-tag {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.week-col-tag.weekend-tag {
+  background: var(--orange);
+}
+.week-col-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+.week-col-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.65;
+}
+.week-photo-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.week-photo-wrap.mt-photo {
+  margin-top: 0;
+}
+.week-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.week-photo-wrap:hover img {
+  transform: scale(1.04);
+}
+/* Timeline */
+.week-timeline {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.week-tl-item {
+  display: grid;
+  grid-template-columns: 52px 20px 1fr;
+  gap: 0 12px;
+  align-items: flex-start;
+  position: relative;
+}
+.week-tl-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 20px;
+  bottom: -20px;
+  width: 2px;
+  background: #e0e4f0;
+}
+.week-tl-time {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #888;
+  padding-top: 2px;
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+.week-tl-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px currentColor;
+}
+.week-tl-dot.blue  { background: var(--blue);   color: var(--blue); }
+.week-tl-dot.orange{ background: var(--orange);  color: var(--orange); }
+.week-tl-dot.green { background: #22c55e;        color: #22c55e; }
+.week-tl-dot.pink  { background: #e040fb;        color: #e040fb; }
+.week-tl-body {
+  padding-bottom: 24px;
+}
+.week-tl-label {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.week-tl-desc {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.6;
+}
+/* Group note */
+.week-group-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: linear-gradient(135deg, #eef2ff 0%, #fff8f0 100%);
+  border: 1px solid #dde4ff;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-top: 40px;
+  font-size: 0.97rem;
+  color: #444;
+  line-height: 1.7;
+}
+.week-group-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.week-group-note strong {
+  color: var(--dark);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .week-grid { grid-template-columns: 1fr; gap: 24px; }
+  .week-col-header { padding: 24px 24px 18px; }
+  .week-timeline { padding: 20px 24px; }
+  .week-group-note { flex-direction: column; gap: 12px; padding: 24px; }
+}
+@media (max-width: 480px) {
+  .week-col-title { font-size: 1.4rem; }
+  .week-tl-time { font-size: 0.76rem; }
+}
 /* =============================================
    COURSES SECTION
    ============================================= */
