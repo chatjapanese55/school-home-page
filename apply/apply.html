@@ -19,7 +19,7 @@
   <header class="apply-header">
     <div class="apply-header-inner">
       <a href="../index.html" class="apply-logo" aria-label="Chat Japanese Tokyo — Home">
-        <img src="../favicon.ico" alt="Chat Japanese Logo" class="logo-img" />
+        <img src="../favicon.jpg" alt="Chat Japanese Logo" class="logo-img" />
         <div class="logo-text">
           <span class="logo-chat">Chat</span>
           <span class="logo-japanese">Japanese</span>
@@ -85,8 +85,10 @@
 
           <div class="form-row two-col">
             <div class="form-group">
-              <label for="dateOfBirth">Date of Birth <span class="req">*</span></label>
-              <input type="date" id="dateOfBirth" name="dateOfBirth" required autocomplete="bday" />
+              <label for="dateOfBirth">Date of Birth <span class="req">*</span>
+                <span class="field-hint">Format: MM/DD/YYYY &nbsp;e.g. 04/15/1990</span>
+              </label>
+              <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="MM/DD/YYYY" maxlength="10" required autocomplete="bday" inputmode="numeric" />
               <span class="field-error" id="err-dateOfBirth"></span>
             </div>
             <div class="form-group">
@@ -133,28 +135,34 @@
 
               <label class="course-card" for="course-1week">
                 <input type="radio" name="course" id="course-1week" value="1-Week Course" required />
+                <div class="course-card-check">✓</div>
                 <div class="course-card-body">
                   <div class="course-card-title">1-Week Course</div>
-                  <div class="course-card-desc">4 days a week · 4 hours per day<br>Mon – Thu, lessons in a café setting</div>
+                  <div class="course-card-detail">📅 Mon – Thu &nbsp;·&nbsp; 4 days/week</div>
+                  <div class="course-card-detail">⏱ 4 hours/day &nbsp;·&nbsp; Café lessons</div>
                   <div class="course-card-price">From $130</div>
                 </div>
               </label>
 
               <label class="course-card featured" for="course-intensive">
-                <span class="course-badge">Most Popular</span>
+                <span class="course-badge">⭐ Most Popular</span>
                 <input type="radio" name="course" id="course-intensive" value="Intensive Course" />
+                <div class="course-card-check">✓</div>
                 <div class="course-card-body">
                   <div class="course-card-title">Intensive Course</div>
-                  <div class="course-card-desc">6 days a week · 4 hrs/day on weekdays<br>+ exclusive cultural activities on weekends</div>
+                  <div class="course-card-detail">📅 Mon – Sun &nbsp;·&nbsp; 6 days/week</div>
+                  <div class="course-card-detail">⏱ 4 hrs/day + weekend activities</div>
                   <div class="course-card-price">From $200</div>
                 </div>
               </label>
 
               <label class="course-card" for="course-weekend">
                 <input type="radio" name="course" id="course-weekend" value="Weekend Course" />
+                <div class="course-card-check">✓</div>
                 <div class="course-card-body">
                   <div class="course-card-title">Weekend Course</div>
-                  <div class="course-card-desc">Sat &amp; Sun only · 4 hours combined<br>Lessons + cultural activities each day</div>
+                  <div class="course-card-detail">📅 Sat &amp; Sun only</div>
+                  <div class="course-card-detail">⏱ 4 hrs combined · Culture incl.</div>
                   <div class="course-card-price">From $80</div>
                 </div>
               </label>
@@ -171,7 +179,7 @@
               <span>① <strong>Mondays</strong> — for 1-Week Course &amp; Intensive Course</span>
               <span>② <strong>Saturdays</strong> — for Weekend Course</span>
             </div>
-            <input type="date" id="entryDay" name="entryDay" required />
+            <input type="text" id="entryDay" name="entryDay" placeholder="MM/DD/YYYY" maxlength="10" required inputmode="numeric" />
             <span class="field-error" id="err-entryDay"></span>
           </div>
 
@@ -285,7 +293,7 @@
     // ============================================================
     // CONFIGURATION — Replace with your GAS Web App URL after deploying
     // ============================================================
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbzj1a-Rxn1ONV_eHqfd6KJLMGQkKuSoqYTUrxM4Helzdh_3PVyQo3ZqPwpd6G62TvLvlw/exec";
+    const GAS_URL = "YOUR_GAS_WEB_APP_URL_HERE";
 
     // ============================================================
     // Step navigation
@@ -341,6 +349,12 @@
         } else if (f === "whatsapp" && !/^\+[\d\s\-()]{7,20}$/.test(el.value.trim())) {
           showError(f, "Please include country code, e.g. +1 234 567 8900");
           valid = false;
+        } else if (f === "dateOfBirth") {
+          const dob = el.value.trim();
+          if (!/^\d{2}\/\d{2}\/\d{4}$/.test(dob)) {
+            showError(f, "Please use MM/DD/YYYY format, e.g. 04/15/1990");
+            valid = false;
+          } else { clearError(f); }
         } else {
           clearError(f);
         }
@@ -356,8 +370,11 @@
       else clearError("course");
 
       const entryDay = document.getElementById("entryDay");
-      if (!entryDay.value) { showError("entryDay", "Please select your entry day."); valid = false; }
-      else clearError("entryDay");
+      if (!entryDay.value.trim()) {
+        showError("entryDay", "Please enter your entry day."); valid = false;
+      } else if (!/^\d{2}\/\d{2}\/\d{4}$/.test(entryDay.value.trim())) {
+        showError("entryDay", "Please use MM/DD/YYYY format, e.g. 06/02/2025"); valid = false;
+      } else clearError("entryDay");
 
       const duration = document.querySelector('input[name="duration"]:checked');
       if (!duration) { showError("duration", "Please select a duration."); valid = false; }
@@ -440,11 +457,25 @@
       document.getElementById("btn-submit").textContent = "Submit Application →";
     });
 
-    // Highlight selected course card
+    // Highlight selected course card + auto-format date fields
     document.querySelectorAll('.course-card input[type="radio"]').forEach(radio => {
       radio.addEventListener("change", () => {
         document.querySelectorAll(".course-card").forEach(c => c.classList.remove("selected"));
         radio.closest(".course-card").classList.add("selected");
+        clearError("course");
+      });
+    });
+
+    // Auto-format date inputs as MM/DD/YYYY while typing
+    ["dateOfBirth", "entryDay"].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("input", function() {
+        let v = this.value.replace(/[^\d]/g, "");
+        if (v.length > 2) v = v.slice(0,2) + "/" + v.slice(2);
+        if (v.length > 5) v = v.slice(0,5) + "/" + v.slice(5,9);
+        this.value = v;
+        clearError(id);
       });
     });
   </script>
