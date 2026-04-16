@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply Now — Chat Japanese Tokyo</title>
+
+  <!-- Google Tag Manager -->
+  <!-- ⚠️ GTM-XXXXXXX を実際のコンテナIDに差し替えてください -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet（同一ディレクトリ） -->
+  <link rel="stylesheet" href="apply.css">
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<!-- ⚠️ GTM-XXXXXXX を実際のコンテナIDに差し替えてください -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header>
+  <a href="https://www.chat-japanese.com/index.html" class="logo-wrap">
+    <img src="https://www.chat-japanese.com/favicon.ico" alt="Chat Japanese Logo"
+         onerror="this.style.display='none'">
+    <div class="logo-text">
+      <strong>Chat Japanese</strong>
+      <span>Immersive Japanese School in Tokyo</span>
+    </div>
+  </a>
+  <a href="https://www.chat-japanese-school.com" class="back-link">← Back to Home</a>
+</header>
+
+<!-- GRAND OPENING BANNER -->
+<div class="banner">🎁 Grand Opening — Zero Registration Fee</div>
+
+
+<!-- ============================================================
+     MAIN
+     ============================================================ -->
+<main>
+
+  <!-- Page Title -->
+  <div class="page-title">
+    <h1>Registration Form</h1>
+    <p>Thank you for choosing Chat Japanese Tokyo!</p>
+  </div>
+
+  <!-- Callout（決済不要・予約を促す） -->
+  <div class="callout">
+    <p class="callout-headline">
+      No payment needed right now.<br>
+      <span class="accent">Just reserve your spot</span> — and start preparing<br>
+      for the best experience of your Japan trip. 🇯🇵
+    </p>
+    <p class="callout-sub">
+      Fill in the form below and we'll send you an <strong>Acceptance Letter</strong> within 2 business days.<br>
+      Payment details will follow after your spot is confirmed.
+    </p>
+  </div>
+
+  <!-- Notice -->
+  <div class="notice">
+    <span class="notice-icon">⚠️</span>
+    <div>
+      As the number of students is limited, we recommend registering
+      <strong>at least 2 weeks</strong> before your arrival.
+      This form does not guarantee your attendance —
+      your spot is confirmed upon receipt of the Acceptance Letter.
+    </div>
+  </div>
+
+  <!-- Form wrapper -->
+  <div id="form-container">
+    <form id="apply-form" novalidate>
+
+      <div class="form-card">
+
+        <!-- ── Step 1: Personal Information ── -->
+        <div class="form-section-title">
+          <span class="badge">Step 1</span>
+          Personal Information
+        </div>
+        <p class="form-section-desc">* All fields are required.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="last-name">Last Name <span class="req">*</span></label>
+            <input type="text" id="last-name" name="last_name" placeholder="Smith" required>
+          </div>
+          <div class="field">
+            <label for="first-name">First Name <span class="req">*</span></label>
+            <input type="text" id="first-name" name="first_name" placeholder="John" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="dob">
+            Date of Birth <span class="req">*</span>
+            <span class="hint">Format: MM/DD/YYYY &nbsp;e.g. 04/15/1990</span>
+          </label>
+          <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" required>
+        </div>
+
+        <div class="field">
+          <label for="nationality">Nationality <span class="req">*</span></label>
+          <input type="text" id="nationality" name="nationality" placeholder="e.g. American" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">
+            WhatsApp Number <span class="req">*</span>
+            <span class="hint">Include country code, e.g. +1 234 567 8900</span>
+          </label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="+1 234 567 8900" required>
+        </div>
+
+        <div class="field" style="margin-bottom: 0;">
+          <label for="passport">Passport Number <span class="req">*</span></label>
+          <input type="text" id="passport" name="passport" placeholder="e.g. AB1234567" required>
+        </div>
+
+        <!-- Section Divider -->
+        <hr class="section-divider">
+
+        <!-- ── Step 2: Course Details ── -->
+        <div class="form-section-title">
+          <span class="badge">Step 2</span>
+          Course Details
+        </div>
+        <p class="form-section-desc">* All fields are required.</p>
+
+        <!-- Course Selection -->
+        <div class="field">
+          <p class="course-label">Course <span class="req">*</span></p>
+          <div class="course-grid">
+
+            <div class="course-option">
+              <input type="radio" id="course-1week" name="course" value="1-Week Course" required>
+              <label class="course-card" for="course-1week">
+                <div class="course-check">✓</div>
+                <div class="course-name">1-Week Course</div>
+                <div class="course-meta">
+                  📅 Mon – Thu · 4 days/week<br>
+                  ⏱ 4 hours/day · Café lessons
+                </div>
+                <div class="course-price">From $200</div>
+              </label>
+            </div>
+
+            <div class="course-option" style="position: relative;">
+              <div class="course-badge">⭐ Most Popular</div>
+              <input type="radio" id="course-intensive" name="course" value="Intensive Course">
+              <label class="course-card" for="course-intensive">
+                <div class="course-check">✓</div>
+                <div class="course-name">Intensive Course</div>
+                <div class="course-meta">
+                  📅 Mon – Sun · 6 days/week<br>
+                  ⏱ 4 hrs/day + weekend activities
+                </div>
+                <div class="course-price">From $300</div>
+              </label>
+            </div>
+
+            <div class="course-option">
+              <input type="radio" id="course-weekend" name="course" value="Weekend Course">
+              <label class="course-card" for="course-weekend">
+                <div class="course-check">✓</div>
+                <div class="course-name">Weekend Course</div>
+                <div class="course-meta">
+                  📅 Sat &amp; Sun only<br>
+                  ⏱ 4 hrs combined · Culture incl.
+                </div>
+                <div class="course-price">From $130</div>
+              </label>
+            </div>
+
+          </div>
+          <a href="https://www.chat-japanese.com" target="_blank" class="course-details-link">
+            View full course details →
+          </a>
+        </div>
+
+        <!-- Start Date -->
+        <div class="field">
+          <label for="start-date">Your Entry Day (Start Date) <span class="req">*</span></label>
+          <input type="date" id="start-date" name="start_date" required>
+          <div class="start-note">
+            ① <strong>Mondays</strong> — for 1-Week Course &amp; Intensive Course<br>
+            ② <strong>Saturdays</strong> — for Weekend Course
+          </div>
+        </div>
+
+        <!-- Course Duration -->
+        <div class="field">
+          <label>Course Duration <span class="req">*</span></label>
+          <div class="pill-group" role="group" aria-label="Course Duration">
+            <div class="pill-option">
+              <input type="radio" id="dur-1" name="duration" value="1 Week" required>
+              <label class="pill-label" for="dur-1">1 Week</label>
+            </div>
+            <div class="pill-option">
+              <input type="radio" id="dur-2" name="duration" value="2 Weeks">
+              <label class="pill-label" for="dur-2">2 Weeks</label>
+            </div>
+            <div class="pill-option">
+              <input type="radio" id="dur-3" name="duration" value="3 Weeks">
+              <label class="pill-label" for="dur-3">3 Weeks</label>
+            </div>
+            <div class="pill-option">
+              <input type="radio" id="dur-4" name="duration" value="4 Weeks">
+              <label class="pill-label" for="dur-4">4 Weeks</label>
+            </div>
+          </div>
+          <p style="font-size: 12px; color: var(--light); margin-top: 8px;">
+            We highly recommend taking courses for <strong>at least 2 weeks</strong> to see real improvements.
+            If you chose Weekend Course, select "1 Week".
+          </p>
+        </div>
+
+        <!-- Number of Persons -->
+        <div class="field">
+          <label>Number of Persons <span class="req">*</span></label>
+          <div class="pill-group" role="group" aria-label="Number of Persons">
+            <div class="pill-option">
+              <input type="radio" id="p1" name="persons" value="1 person" required>
+              <label class="pill-label" for="p1">1 person</label>
+            </div>
+            <div class="pill-option">
+              <input type="radio" id="p2" name="persons" value="2 persons">
+              <label class="pill-label" for="p2">2 persons</label>
+            </div>
+            <div class="pill-option">
+              <input type="radio" id="p3" name="persons" value="3 persons">
+              <label class="pill-label" for="p3">3 persons</label>
+            </div>
+            <div class="pill-option">
+              <input type="radio" id="p4" name="persons" value="4 persons">
+              <label class="pill-label" for="p4">4 persons</label>
+            </div>
+            <div class="pill-option">
+              <input type="radio" id="p5" name="persons" value="More than 4">
+              <label class="pill-label" for="p5">More than 4</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Questions / Notes -->
+        <div class="field" style="margin-bottom: 0;">
+          <label for="notes">
+            Questions / Notes
+            <span style="font-weight: 400; color: var(--light); font-size: 12px;">(optional)</span>
+          </label>
+          <textarea id="notes" name="notes" placeholder="Any questions or special requests..."></textarea>
+        </div>
+
+      </div><!-- /form-card -->
+
+      <!-- Privacy Policy -->
+      <div class="privacy-box">
+        <h4>Privacy Policy</h4>
+        <p>
+          Your personal information will be used solely for the purpose of enrollment in our community
+          and providing educational services. We do not disclose your personal data to third parties
+          without your prior consent. If you have any questions, contact us at
+          <a href="mailto:chatjapanese55@gmail.com">chatjapanese55@gmail.com</a>.
+        </p>
+        <div class="checkbox-row">
+          <input type="checkbox" id="privacy" name="privacy" required>
+          <label for="privacy">I have read and agree to the Privacy Policy. *</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        Submit Application →
+      </button>
+
+    </form>
+  </div><!-- /form-container -->
+
+  <!-- Success State -->
+  <div class="result-card" id="success-card">
+    <div class="result-icon">🎉</div>
+    <h2>Application Received!</h2>
+    <p>
+      Thank you for applying to <strong>Chat Japanese Tokyo</strong>.<br>
+      We'll review your application and send your <strong>Acceptance Letter</strong>
+      via Email or WhatsApp within 2 business days.
+    </p>
+    <p style="font-size: 13px;">
+      If you have any questions, feel free to reach us at
+      <a href="mailto:chatjapanese55@gmail.com" style="color: var(--blue);">chatjapanese55@gmail.com</a>.
+    </p>
+    <a href="https://www.chat-japanese.com/index.html" class="btn-home">← Back to Home</a>
+  </div>
+
+  <!-- Error State -->
+  <div class="result-card" id="error-card">
+    <div class="result-icon">⚠️</div>
+    <h2>Something went wrong</h2>
+    <p>
+      We couldn't submit your application. Please try again or contact us directly at
+      <a href="mailto:chatjapanese55@gmail.com" style="color: var(--blue);">chatjapanese55@gmail.com</a>.
+    </p>
+    <button class="btn-retry" onclick="retryForm()">Try Again</button>
+  </div>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  © 2025 Chat Japanese Tokyo. All rights reserved. |
+  <a href="mailto:chatjapanese55@gmail.com">chatjapanese55@gmail.com</a>
+</footer>
+
+<!-- JavaScript（同一ディレクトリ） -->
+<script src="apply.js"></script>
+
+</body>
+</html>
